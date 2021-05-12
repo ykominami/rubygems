@@ -1581,4 +1581,4 @@ class Object
   end
 end
 
-require 'rubygems/test_utilities'
+require_relative 'test_utilities'
