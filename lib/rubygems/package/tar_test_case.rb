@@ -1,4 +1,7 @@
 # frozen_string_literal: true
+
+warn "Requiring rubygems/package/tar_test_case is deprecated. You shouldn't be relying on any of this, since it's only meant for testing rubygems."
+
 require 'rubygems/test_case'
 require 'rubygems/package'
 

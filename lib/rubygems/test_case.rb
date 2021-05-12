@@ -1,5 +1,10 @@
 # frozen_string_literal: true
 
+requirer = caller_locations(1, 1).first.path
+unless requirer.end_with?("rubygems/installer_test_case.rb") || requirer.end_with?("rubygems/package/tar_test_case.rb")
+  warn "Requiring rubygems/test_case is deprecated. You shouldn't be relying on any of this, since it's only meant for testing rubygems."
+end
+
 require 'rubygems'
 
 # If bundler gemspec exists, add to stubs

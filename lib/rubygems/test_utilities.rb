@@ -1,4 +1,10 @@
 # frozen_string_literal: true
+
+requirer = caller_locations(1, 1).first.path
+unless requirer.end_with?("rubygems/test_case.rb")
+  warn "Requiring rubygems/test_utilities is deprecated. You shouldn't be relying on any of this, since it's only meant for testing rubygems."
+end
+
 require 'tempfile'
 require 'rubygems'
 require 'rubygems/remote_fetcher'
