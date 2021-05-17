@@ -6,7 +6,6 @@ require 'rubygems/s3_uri_signer'
 require 'rubygems/uri_formatter'
 require 'rubygems/uri_parsing'
 require 'rubygems/user_interaction'
-require 'resolv'
 
 ##
 # RemoteFetcher handles the details of fetching gems and gem information from
@@ -78,7 +77,7 @@ class Gem::RemoteFetcher
   # +headers+: A set of additional HTTP headers to be sent to the server when
   #            fetching the gem.
 
-  def initialize(proxy=nil, dns=nil, headers={})
+  def initialize(proxy=nil, headers={})
     require 'rubygems/core_ext/tcpsocket_init' if Gem.configuration.ipv4_fallback_enabled
     require 'net/http'
     require 'stringio'
